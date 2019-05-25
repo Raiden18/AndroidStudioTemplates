@@ -1,8 +1,10 @@
-<template format="4"
+<template format="3"
         revision="1"
-        name="Simple RecyclerView Adapter with click without creating model"
+        name="Adapter of the RecyclerView"
         description="Creates a new Adapter with ViewHolder">
 
+        <category value="Other"/>
+        
     <parameter
         id="adapterName"
         name="Adapter And ViewHolder and Layout  Name"
@@ -19,6 +21,7 @@
         default=""
         help="The name of the layout to create" />
 
+
     <parameter
         id="packageName"
         name="Package name"
@@ -34,6 +37,18 @@
         default= ""
         help = "The model class for item" />
 
+
+    <parameter 
+    	id="features" 
+    	name="RecyclerView.Adapter Style" 
+    	type="enum" 
+    	default="withClick"
+    	help="Choose your own Adapter style">
+
+		<option id="withClick">With click</option>
+		<option id="withoutClick">Without click</option>
+  	</parameter>
+  	
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />
 
