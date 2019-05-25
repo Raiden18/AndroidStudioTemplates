@@ -1,0 +1,40 @@
+<template format="4"
+        revision="1"
+        name="Simple RecyclerView Adapter with click without creating model"
+        description="Creates a new Adapter with ViewHolder">
+
+    <parameter
+        id="adapterName"
+        name="Adapter And ViewHolder and Layout  Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default=""
+        help="The name of the Adapter And ViewHolder of RecyclerView and Layout file name to create" />
+
+    <parameter
+        id="layoutName"
+        name="ViewHolder Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default=""
+        help="The name of the layout to create" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.ltst" />
+
+    <parameter
+        id="modelClassId"
+        name = "Model class"
+        type = "string"
+        constraints="class|unique|nonempty"
+        default= ""
+        help = "The model class for item" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
