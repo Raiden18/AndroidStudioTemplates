@@ -1,9 +1,9 @@
-<template format="3"
+<template format="4"
         revision="1"
         name="Adapter of the RecyclerView"
         description="Creates a new Adapter with ViewHolder">
 
-        <category value="Other"/>
+    <category value="Other"/>
         
     <parameter
         id="adapterName"
@@ -37,7 +37,6 @@
         default= ""
         help = "The model class for item" />
 
-
     <parameter 
     	id="features" 
     	name="RecyclerView.Adapter Style" 
@@ -47,8 +46,16 @@
 
 		<option id="withClick">With click</option>
 		<option id="withoutClick">Without click</option>
+		<option id="radioSelectable">Radio Selectable</option>
   	</parameter>
-  	
+
+ 	<parameter
+  		id="isNeededSelectableArray" 
+    	name="Create Slectable ArrayList" 
+    	type="Boolean" 
+    	default="false"
+    	visibility="(features == 'radioSelectable')"/>
+
     <globals file="globals.xml.ftl" />
     <execute file="recipe.xml.ftl" />
 
