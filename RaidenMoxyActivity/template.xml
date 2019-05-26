@@ -1,0 +1,69 @@
+<template format="4"
+        revision="1"
+        name="Moxy Screens"
+        description="Creates Moxy Activity\Fragment with Dagger classes (Module, Component, Scope)">
+
+    <category value="Other"/>
+
+    <parameter 
+    	id="screenType" 
+    	name="Screen Type" 
+    	type="enum" 
+    	default="withClick"
+    	help="Choose your screen type">
+		<option id="activity">Activity</option>
+		<option id="fragment">Fragment</option>
+  	</parameter> 
+
+    <parameter
+        id="screenName"
+        name="Activity\Fragment name:"
+        type="string"
+        constraints="class|unique|nonempty"
+        default=""
+        help="The name of the Moxy Activity\Fragment" />
+
+
+    <parameter
+        id="baseScreenName"
+        name="Base Activity\Fragment name:"
+        type="string"
+        constraints="class|unique|nonempty"
+        default=""
+        help="The name of a base Moxy Activity\Fragment" />
+
+    <parameter
+        id="basePresenter"
+        name="Base Presenter name:"
+        type="string"
+        constraints="class|unique|nonempty"
+        default=""
+        help="The name of a base Moxy Presenter" />
+
+    <parameter
+        id="parentComponentName"
+        name="Dagger parent component name:"
+        type="string"
+        constraints="class|unique|nonempty"
+        default=""
+        help="The name of the dagger parent component interface name" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default=""
+        help="The name of the layout to create" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.ltst" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
