@@ -1,0 +1,34 @@
+<template format="4"
+        revision="1"
+        name="Creates MVVM+DataBinding+Koin"
+        description="Creates MVVM with databinding and Koin">
+
+    <category value="Other"/>
+
+    <parameter
+        id="screenName"
+        name="Fragment name:"
+        type="string"
+        constraints="class|unique|nonempty"
+        default=""
+        help="The name of the Fragment" />
+
+    <parameter
+        id="layoutName"
+        name="Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default=""
+        help="The name of the layout to create" />
+
+    <parameter
+        id="packageName"
+        name="Package name"
+        type="string"
+        constraints="package"
+        default="com.ltst" />
+
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
